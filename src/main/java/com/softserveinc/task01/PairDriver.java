@@ -6,7 +6,7 @@ package com.softserveinc.task01;
  * @author Nathan Sprague
  * @version V1, 8/2016
  */
-public class ObjectPairDriver {
+public class PairDriver {
 
     /**
      * Create several stadium pairs then print the name of the stadium with the largest capacity.
@@ -15,10 +15,10 @@ public class ObjectPairDriver {
      */
     public static void main(String[] args) {
 
-        ObjectPair[] stadiums = new ObjectPair[3];
-        stadiums[0] = new ObjectPair("Bridgeforth Stadium", 25000);
-        stadiums[1] = new ObjectPair("Michigan Stadium", 109901);
-        stadiums[2] = new ObjectPair("Lane Stadium", 66233);
+        Pair<String, Integer>[] stadiums = new Pair[3];
+        stadiums[0] = new Pair<>("Bridgeforth Stadium", 25000);
+        stadiums[1] = new Pair<>("Michigan Stadium", 109901);
+        stadiums[2] = new Pair<>("Lane Stadium", 66233);
 
         System.out.println(largestStadium(stadiums));
     }
@@ -31,15 +31,15 @@ public class ObjectPairDriver {
      * @return The name of the stadium with the largest capacity
      */
 
-    public static String largestStadium(ObjectPair[] stadiums) {
+    public static String largestStadium(Pair<String, Integer>[] stadiums) {
 
-        ObjectPair max = stadiums[0];
+        Pair<String, Integer> max = stadiums[0];
         for (int i = 1; i < stadiums.length; i++) {
-            if ((int) stadiums[i].getSecond() > (int) max.getSecond()) {
+            if (stadiums[i].getSecond() > max.getSecond()) {
                 max = stadiums[i];
             }
         }
 
-        return (String) max.getFirst();
+        return max.getFirst();
     }
 }
