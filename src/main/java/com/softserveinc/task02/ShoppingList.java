@@ -24,9 +24,7 @@ public class ShoppingList {
 
     public void print() {
         // TODO: print the list
-        for (String item : items) {
-            System.out.println(item);
-        }
+        System.out.println(items);
     }
 
 }
